@@ -11,7 +11,7 @@ for x, y, w, h in eyes:
     centre_x = x+w/2 
     centre_y = y + h/2
     filter = cv2.resize(filter , (int( w / 4)  ,int( h /4) ))
-    print(filter.shape) 
+    print(filter.shape)
     if max(filter.shape) == max(image[int(centre_y-(h/8)):int(centre_y+(h/8)),int(centre_x-(w/8)):int(centre_x+(w/8))].shape):
         filter = cv2.resize(filter , (int( w / 4)  ,int( h /4) ))
     elif max(filter.shape) > max(image[int(centre_y-(h/8)):int(centre_y+(h/8)),int(centre_x-(w/8)):int(centre_x+(w/8))].shape):
