@@ -19,8 +19,9 @@ def calculate_matching_percentage(landmarks1, landmarks2):
     matching_percentage = 100 - (total_distance / num_landmarks * 100)
     return matching_percentage
 
-cap1 = cv2.VideoCapture('b1.mp4') # put the newbie video here
-cap2 = cv2.VideoCapture('b2.mp4') # put the expert video here
+cap1 = cv2.VideoCapture('child jumping 2.mp4') # put the newbie video here
+
+cap2 = cv2.VideoCapture('child jumping 3.mp4') # put the expert video here
 
 with mp_pose.Pose(
     min_detection_confidence=0.5,
@@ -33,12 +34,12 @@ with mp_pose.Pose(
             print("No video in camera frame")
             break
 
-        # image1 = cv2.flip(image1, 1) # mirror the image horizontally
+        image1 = cv2.flip(image1, 1) # mirror the image horizontally
         h1, w1, c1 = image1.shape
         fps_start_time1 = time.time()
         fps1 = 0
 
-        # image2 = cv2.flip(image2, 1) # mirror the image horizontally
+        image2 = cv2.flip(image2, 1) # mirror the image horizontally
         h2, w2, c2 = image2.shape
         fps_start_time2 = time.time()
         fps2 = 0
